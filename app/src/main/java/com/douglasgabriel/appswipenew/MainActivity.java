@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ConstraintLayout tela;
     private TextView tvSwipe;
-    private String[] perguntas = {"Você gosta de sorvete?","Você gosta de ler?","Você de gosta de frutas?","Você tem certeza de sua existência?","Você é você?"};
+    private String[] perguntas = {"Você já assistiu Frozen ?","Você já assistiu Frozen 2 ?","Você de gosta de Batman?","Você acha o coringa Sádico?","Você tem menos que 1,50 de altura?"};
     List<String> lista = new ArrayList<String>(Arrays.asList(perguntas));
     private TextView tvSim;
     private TextView tvNao;
@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
                 super.onSwipeBottom();
                 nao = nao + 1;
                 resposta();
-                //tvSwipe.setText("Não");
             }
 
             @Override
@@ -79,7 +78,6 @@ public class MainActivity extends AppCompatActivity {
         if(cont >= lista.size()){
             cont = 0;
         }
-        //tvSwipe.setText(lista.toArray()[cont].toString());
         return cont;
     }
 
@@ -88,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
         if (cont == -1) {
             cont = lista.size() - 1;
         }
-        //tvSwipe.setText(lista.toArray()[cont].toString());
         return cont;
     }
 
@@ -97,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
             lista.remove(cont);
             muda();
             tvSwipe.setText(lista.toArray()[cont].toString());
-
         }
         else{
             tvSim.setText("Reset");
